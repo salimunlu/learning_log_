@@ -2,9 +2,14 @@
 
 {% block content %}
 	<h2>Topics:</h2>
+
+    <a href="{% url 'learning_logs:new_topic' %}">Add a new topic</a>
+
     <ol>
         {% for topic in topics %}
-    	    <li>{{ topic.text|upper }}</li>
+    	    <li>
+                <a href="{% url 'learning_logs:topic' topic.id %}">{{ topic }}</a>
+            </li>
         {% endfor %}
     </ol>
 
