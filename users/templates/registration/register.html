@@ -1,0 +1,10 @@
+{% extends 'learning_logs/base.html' %}
+
+{% block content %}
+	<form action="{% url 'users:register' %}" method="post">
+        {% csrf_token %}
+        {{ form.as_div }}
+        <button name="submit">Register</button>
+        <button name="reset" type="reset">Reset</button>
+    </form>
+{% endblock %}

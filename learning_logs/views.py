@@ -76,3 +76,8 @@ def delete_entry(request, entry_id):
     entry.delete()
     return redirect('learning_logs:topic', topic_id=topic.id)
 
+
+def delete_topic(request, topic_id):
+    topic = Topic.objects.get(id=topic_id)
+    topic.delete()
+    return redirect('learning_logs:topics')

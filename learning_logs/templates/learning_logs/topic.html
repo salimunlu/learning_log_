@@ -2,6 +2,9 @@
 
 {% block content %}
 	<h1>Topic: {{ topic }}</h1>
+    <p>
+        <a href="{% url 'learning_logs:delete_topic' topic.id %}">Delete topic</a>
+    </p>
 
     <p>Entries:</p>
     <p>
