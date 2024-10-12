@@ -11,7 +11,8 @@
         {% for entry in entries %}
         	<li>
                 <p>{{ entry.date_added|date:'F d, Y H:i' }} --
-                    <a href="{% url 'learning_logs:edit_entry' entry.id %}">Edit entry</a>
+                    <a href="{% url 'learning_logs:edit_entry' entry.id %}">Edit entry</a> |
+                    <a href="{% url 'learning_logs:delete_entry' entry.id %}">Delete entry</a>
                 </p>
                 <p>{{ entry.text }}</p>
             </li>
