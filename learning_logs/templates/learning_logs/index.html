@@ -1,7 +1,27 @@
 {% extends 'learning_logs/base.html' %}
 
 {% block content %}
-    <h1>Learning Log</h1>
-    <p>Learning Log helps you keep track of your learning,
-        for any topic you're interested in.</p>
+<main>
+  <div class="container py-4">
+    <div class="p-5 mb-4 bg-body-tertiary rounded-3">
+      <div class="container-fluid py-5">
+        <h1 class="display-4 fw-bold">Track Your Learning Progress</h1>
+        <p class="col-md-8 fs-4">
+            Create your own personalized Learning Log.
+            Keep track of the topics you're learning about.
+            Whenever you discover something new, log it to summarize what you've
+            learned and track your progress.
+        </p>
+          <a class="btn btn-primary btn-lg" href="{% url 'users:register' %}">Get Started &bigstar;</a>
+      </div>
+    </div>
+
+    <footer class="pt-3 mt-4 text-body-secondary border-top">
+      &copy; 2024
+    </footer>
+  </div>
+</main>
+<script src="/docs/5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+
 {% endblock %}

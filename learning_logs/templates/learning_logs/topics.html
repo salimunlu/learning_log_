@@ -1,17 +1,40 @@
 {% extends 'learning_logs/base.html' %}
 
+{% block page_header %}
+	<h1 class="text-center mt-4">Topics</h1>
+    <div class="mt-4 text-center">
+        <a href="{% url 'learning_logs:new_topic' %}" class="btn btn-outline-success">Add a new topic</a>
+    </div>
+
+{% endblock %}
+
 {% block content %}
-	<h2>Topics:</h2>
-
-    <a href="{% url 'learning_logs:new_topic' %}">Add a new topic</a>
-
-    <ol>
+    <div class="row row-cols-1 row-cols-md-2 g-4">
         {% for topic in topics %}
-    	    <li>
-                <a href="{% url 'learning_logs:topic' topic.id %}">{{ topic }}</a> |
-                <a href="{% url 'learning_logs:delete_topic' topic.id %}">Delete topic</a>
-            </li>
+            <div class="col">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <a href="{% url 'learning_logs:topic' topic.id %}" class="text-decoration-none">
+                                {{ topic.text }}
+                            </a>
+                        </h5>
+                        <p class="card-text">
+                            Date added: {{ topic.date_added|date:'F d, Y' }}
+                        </p>
+                    </div>
+                    <div class="card-footer d-flex justify-content-between">
+                        <!-- Silme butonu -->
+                        <a href="{% url 'learning_logs:delete_topic' topic.id %}" class="btn btn-outline-danger">Delete</a>
+
+                        <!-- Konu detayı -->
+                        <a href="{% url 'learning_logs:topic' topic.id %}" class="btn btn-outline-primary">View Topic</a>
+                    </div>
+                </div>
+            </div>
+        {% empty %}
+            <p class="text-center">No topics have been added yet.</p>
         {% endfor %}
-    </ol>
+    </div>
 
 {% endblock %}
