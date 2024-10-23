@@ -1,0 +1,44 @@
+{% extends 'learning_logs/base.html' %}
+{% load static %}
+
+{% block page_header %}
+    <h2>About Learning Log</h2>
+
+{% endblock page_header %}
+
+
+
+{% block content %}
+  <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <h3>Welcome to Learning Log</h3>
+        <p>Learning Log is a user-friendly web application designed to help you keep track of your learning journey. Whether you're a student, a professional, or just curious, Learning Log empowers you to create topics and make entries about what you've learned in each topic.</p>
+        <p>With Learning Log, you can document your intellectual growth, gather insights from your studies, and reflect on your educational experiences. It's a versatile tool that adapts to your learning needs, whether you're pursuing academic excellence, enhancing your professional skills, or simply exploring new areas of knowledge.</p>
+        <p>Our platform provides a structured and organized way to capture your learning moments. From taking notes on fascinating subjects to summarizing your discoveries, Learning Log ensures that your knowledge is easily accessible and well-organized.</p>
+      </div>
+      <div class="col-md-6">
+        <img src="{% static 'images/about_image.png' %}" alt="Learning Image" class="img-fluid rounded">
+      </div>
+    </div>
+    <div class="row mt-4">
+      <div class="col-md-6">
+        <h3>Key Features</h3>
+        <ul>
+          <li>Track your learning progress</li>
+          <li>Create and manage topics</li>
+          <li>Add entries with what you've learned</li>
+          <li>Organize your knowledge</li>
+          <li>Accessible from any device</li>
+        </ul>
+      </div>
+      <div class="col-md-6">
+        <h3>Get Started</h3>
+        <p>Getting started with Learning Log is easy. Just register an account, create your first topic, and start documenting your learning journey today!</p>
+        <p>Whether you want to keep track of your academic studies, professional development, or personal interests, Learning Log is your reliable companion on your learning adventure.</p>
+      </div>
+    </div>
+  </div>
+{% endblock content %}
+

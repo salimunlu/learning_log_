@@ -1,0 +1,13 @@
+.logo {
+    width: 40px;  /* Responsive genişlik */
+    height: auto; /* Yükseklik otomatik ayarlanır */
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-brand img {
+    margin-right: 10px;  /* Metin ile logo arasına boşluk */
+}

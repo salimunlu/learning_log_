@@ -1,10 +1,44 @@
 {% extends 'learning_logs/base.html' %}
+{% load django_bootstrap5 %}
 
 {% block content %}
-	<form action="{% url 'users:register' %}" method="post">
-        {% csrf_token %}
-        {{ form.as_div }}
-        <button name="submit">Register</button>
-        <button name="reset" type="reset">Reset</button>
-    </form>
+<div class="container mt-5">
+    <div class="row justify-content-center align-items-center">
+        <!-- Sol taraf: Bilgilendirme kısmı -->
+        <div class="col-md-6 d-none d-md-block">
+            <h2>Become a Learning Logger</h2>
+            <p>Learning Log is a user-friendly web application designed to help you keep track of your learning journey. Whether you're a student, a professional, or just curious, Learning Log empowers you to create topics and make entries about what you've learned in each topic.</p>
+            <ul class="list-unstyled mt-4">
+                <li><i class="fas fa-check text-success"></i> Track your learning progress</li>
+                <li><i class="fas fa-check text-success"></i> Set your goals</li>
+                <li><i class="fas fa-check text-success"></i> Organize your knowledge</li>
+                <li><i class="fas fa-check text-success"></i> Add entries for your studies</li>
+                <li><i class="fas fa-check text-success"></i> Access from any device</li>
+            </ul>
+        </div>
+
+        <!-- Sağ taraf: Kayıt formu -->
+        <div class="col-md-5 bg-light p-4 rounded shadow">
+            <h3 class="text-center mb-4">Sign Up</h3>
+
+            <!-- Form -->
+            <form action="{% url 'users:register' %}" method="post">
+                {% csrf_token %}
+                {% bootstrap_form form %}
+
+                <!-- Kayıt butonu -->
+                <button type="submit" class="btn btn-success w-100">Sign Up</button>
+
+                <p class="text-center mt-3">
+                    By signing up you agree to our <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.
+                </p>
+            </form>
+
+            <!-- Already have an account -->
+            <p class="text-center mt-3">
+                Already have an account? <a href="{% url 'users:login' %}">Log in</a>.
+            </p>
+        </div>
+    </div>
+</div>
 {% endblock %}
